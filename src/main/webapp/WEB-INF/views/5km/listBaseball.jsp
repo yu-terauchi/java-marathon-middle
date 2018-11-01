@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>central league list</title>
+<title>一覧画面</title>
 </head>
 <body>
 	<table border="1">
@@ -15,28 +17,10 @@
 		</tr>
 	</table>
 
-	<form action="baseball/toReference" method="GET">
-		<a href="${pageContext.request.contextPath}/baseball/toReference?id=1">読売ジャイアンツ</a>
-	</form>
-	
-	<form action="baseball/toReference" method="GET">
-		<a href="${pageContext.request.contextPath}/baseball/toReference?id=2">阪神タイガース</a>
-	</form>
-	
-	<form action="baseball/toReference" method="GET">
-		<a href="${pageContext.request.contextPath}/baseball/toReference?id=3">中日ドラゴンズ</a>
-	</form>
-	
-	<form action="baseball/toReference" method="GET">
-		<a href="${pageContext.request.contextPath}/baseball/toReference?id=4">横浜DeNAベイスターズ</a>
-	</form>
-	
-	<form action="baseball/toReference" method="GET">
-		<a href="${pageContext.request.contextPath}/baseball/toReference?id=5">広島東洋カープ</a>
-	</form>
-	
-	<form action="baseball/toReference" method="GET">
-		<a href="${pageContext.request.contextPath}/baseball/toReference?id=6">東京ヤクルトスワローズ</a>
-	</form>
+		<c:forEach var="baseballTeam" items="${baseballTeamList}">
+			<a href="${pageContext.request.contextPath}/baseball/toReference?id=<c:out value="${baseballTeam.id}"/>">
+				<c:out value="${baseballTeam.teamName}" /><br>
+			</a>
+		</c:forEach>
 </body>
 </html>

@@ -9,16 +9,16 @@
 </head>
 <body>
 	<h2>球団名</h2>
-	<c:out value="${prof.teamName}" />
+	<c:out value="${baseballTeam.teamName}" />
 	<br>
 	<h2>本拠地</h2>
-	<c:out value="${prof.headquarters}" />
+	<c:out value="${baseballTeam.headquarters}" />
 	<br>
 	<h2>発足</h2>
-	<c:out value="${prof.inauguration}" />
+	<c:out value="${baseballTeam.inauguration}" />
 	<br>
 	<h2>歴史</h2>
-	<pre><c:out value="${prof.history}" /></pre>
+	<pre><c:out value="${baseballTeam.history}" /></pre>
 	<br><br>
 
 	<form action="${pageContext.request.contextPath}/baseball/toLink" method="POST">

@@ -1,20 +1,26 @@
 package practice.domain;
 
 /**
- * baseball_teamsテーブルのカラムに対応したドメイン
+ * baseball_teamsテーブルのカラムに対応したドメイン.
  * 
  * @author yu.terauchi
  *
  */
-public class teamProf {
+public class BaseballTeam {
+	/** ID */
 	private Integer id;
+	/**リーグ名*/
 	private String leagueName;
+	/**チーム名　*/
 	private String teamName;
+	/**本拠地*/
 	private String headquarters;
+	/**発足の年月日*/
 	private String inauguration;
+	/**チームの歴史*/
 	private String history;
 
-	public teamProf(Integer id, String leagueName, String teamName, String headquarters, String inauguration,
+	public BaseballTeam(Integer id, String leagueName, String teamName, String headquarters, String inauguration,
 			String history) {
 		super();
 		this.id = id;
@@ -24,7 +30,7 @@ public class teamProf {
 		this.inauguration = inauguration;
 		this.history = history;
 	}
-	public teamProf() {
+	public BaseballTeam() {
 		id = 0;
 		leagueName = null;
 		teamName = null;
