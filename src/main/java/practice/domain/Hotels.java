@@ -1,27 +1,42 @@
 package practice.domain;
 
+import javax.validation.constraints.NotBlank;
+
+/**
+ * hotelsテーブルから受け取った値を当てはめるドメイン
+ * 
+ * @author yu.terauchi
+ *
+ */
 public class Hotels {
+	/**ID*/
 	private Integer id;
+	/**地区*/
 	private String areaName;
+	/**ホテル名*/
 	private String hotelName;
+	/**所在地*/
 	private String address;
+	/**最寄り駅*/
 	private String nearestStation;
+	/**価格*/
+	@NotBlank(message = "価格を入力してください")
 	private Integer price;
-	private boolean parking;
-	
+	/**駐車場*/
+	private String parking;
+
 	@Override
 	public String toString() {
 		return "Hotels [id=" + id + ", areaName=" + areaName + ", hotelName=" + hotelName + ", address=" + address
 				+ ", nearestStation=" + nearestStation + ", price=" + price + ", parking=" + parking + "]";
 	}
 
-	
-	
 	public Hotels() {
-		
+
 	}
+
 	public Hotels(Integer id, String areaName, String hotelName, String address, String nearestStation, Integer price,
-			boolean parking) {
+			String parking) {
 		super();
 		this.id = id;
 		this.areaName = areaName;
@@ -80,12 +95,12 @@ public class Hotels {
 		this.price = price;
 	}
 
-	public boolean isParking() {
+	public String getParking() {
 		return parking;
 	}
 
-	public void setParking(boolean parking) {
+	public void setParking(String parking) {
 		this.parking = parking;
 	}
-	
+
 }

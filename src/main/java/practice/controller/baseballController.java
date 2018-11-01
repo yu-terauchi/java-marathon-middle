@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import practice.domain.BaseballTeam;
-import practice.repository.baseballRepository;
+import practice.repository.BaseballRepository;
 
 /**
  * 一覧画面よりurlに組み込まれたリクエストパラメータを受け取りbaseball_teamsテーブルにアクセスし、
@@ -24,7 +24,7 @@ import practice.repository.baseballRepository;
 public class BaseballController {
 
 	@Autowired
-	private baseballRepository baseballRepository;
+	private BaseballRepository baseballRepository;
 
 	/**
 	 * 一覧画面を表示します.
@@ -44,7 +44,7 @@ public class BaseballController {
 	 * 
 	 * @param id 各球団のid
 	 * @param model モデル
-	 * @return 1球団のデータを収めたオブジェクトをスコープに格納
+	 * @return 野球情報詳細画面
 	 */
 	@RequestMapping("/toReference")
 	public String toReference(String id, Model model) {
